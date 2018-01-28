@@ -1,0 +1,62 @@
+@import './variables.less';
+@import './navbar.less';
+@import './index.less';
+
+body, input, textarea {
+    font-family: @body-font !important;
+}
+
+body {
+    font-size: 14px !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: @header-font;
+}
+
+a {
+    color: @color-1;
+}
+
+button.btn {
+    &:focus {
+        outline: none !important;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+.page-container {
+
+    .section {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+}
+
+.input-group {
+    .btn {
+        padding: .5rem .75rem;
+    }
+}
+
+input.form-control {
+    &::-webkit-input-placeholder { // WebKit, Blink, Edge
+        color: @grey-1;
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: @grey-1;
+    }
+    &::-moz-placeholder {  /* Mozilla Firefox 19+ */
+        color: @grey-1;
+    }
+    &:-ms-input-placeholder {  /* Internet Explorer 10-11 */
+        color: @grey-1;
+    }
+    &::-ms-input-placeholder {  /* Microsoft Edge */
+        color: @grey-1;
+    }
+    &:placeholder { /* Most modern browsers support this now. */
+        color: @grey-1;
+    }
+}
