@@ -1,17 +1,28 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var lessMiddleware = require('less-middleware');
+/*jshint esversion: 6 */
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const lessMiddleware = require('less-middleware');
 
-var app = express();
+const exphbs = require('express-handlebars');
+const Handlebars     = require('handlebars');
+const HandlebarsIntl = require('handlebars-intl');
+
+const index = require('./routes/index');
+const users = require('./routes/users');
+
+const app = express();
+
+HandlebarsIntl.registerWith(Handlebars);
 
 // view engine setup
+
+// var hbs = exphbs.create({extname: 'hbs'});
+// app.engine(hbs.extname, hbs.engine);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
@@ -26,10 +37,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/modules', express.static(path.join(__dirname, 'node_modules')));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });

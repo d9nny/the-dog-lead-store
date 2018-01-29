@@ -1,12 +1,16 @@
 nav.navbar {
     padding: .75rem 1.5rem;
     box-shadow: @box-shadow-1;
+    position: fixed;
+    z-index: 100;
+    background-color: #fff;
+    width: 100%;
+    margin: 0;
 
     .navbar-brand {
         font-family: @header-font;
-        font-size: 2rem;
-        padding: 1rem;
-        padding-bottom: 0.5rem;
+        font-size: 3rem;
+        padding: 0 1rem;
         color: @color-1;
     }
 
@@ -51,7 +55,7 @@ nav.navbar {
             }
         }
 
-        .navbar-nav{
+        .navbar-nav {
             .nav-link {
                 font-size: 18px;
                 font-weight: 500;
