@@ -8,21 +8,18 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const lessMiddleware = require('less-middleware');
 
-const exphbs = require('express-handlebars');
-const Handlebars     = require('handlebars');
+const Handlebars     = require('hbs');
 const HandlebarsIntl = require('handlebars-intl');
 
 const index = require('./routes/index');
-const users = require('./routes/users');
+const store = require('./routes/store');
 
 const app = express();
 
-HandlebarsIntl.registerWith(Handlebars);
-
 // view engine setup
-
-// var hbs = exphbs.create({extname: 'hbs'});
-// app.engine(hbs.extname, hbs.engine);
+HandlebarsIntl.registerWith(Handlebars);
+HandlebarsIntl.__addLocaleData({locale: 'en_GB'});
+Handlebars.registerPartials(__dirname + '/views/partials');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
@@ -36,7 +33,7 @@ app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/store', store);
 app.use('/modules', express.static(path.join(__dirname, 'node_modules')));
 
 // catch 404 and forward to error handler

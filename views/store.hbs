@@ -1,1 +1,26 @@
-<h1>Store page</h1>
+<div id="page-store">
+    <div class="container-fluid section"
+         id="store-section">
+        <div class="row">
+            <div class="col-12 col-md-3"
+                 id="filters-container">
+                <div class="card">
+                    <div class="col-12 col-md-4"></div>
+                    <div class="col-12 col-md-4"></div>
+                    <div class="col-12 col-md-4"></div>
+                    <div class="col-12 col-md-4"></div>
+                    <div class="col-12 col-md-4"></div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-9"
+                 id="products-container">
+                 <div class="row">
+                    {{#each products}}
+                        {{> product_card}}
+                    {{/each}}
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+nav.navbar {
+    padding: .75rem 1.5rem;
+    box-shadow: @box-shadow-1;
+    position: fixed;
+    z-index: 100;
+    background-color: #fff;
+    width: 100%;
+    margin: 0;
+    height: @nav-height;
+
+    .navbar-brand {
+        font-family: @header-font;
+        font-size: 3rem;
+        padding: 0 1rem;
+        color: @color-1;
+    }
+
+    .navbar-toggle {
+
+    }
+
+    .navbar-collapse {
+
+        .nav-group {
+            margin-right: 20px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.btn,
+            .btn {
+                cursor: pointer;
+
+                i {
+                    color: @grey-1;
+
+                    &.fa-shopping-basket {
+                        color: @grey-1;
+                    }
+                }
+
+                &:hover {
+                    i {
+                        color: @color-1;
+
+                        &.fa-shopping-basket {
+                            color: @color-1;
+                        }
+                    }
+                }
+            }
+
+            .form-control:focus {
+                border-color: @color-1;
+            }
+        }
+
+        .navbar-nav {
+            .nav-link {
+                font-size: 18px;
+                font-weight: 500;
+                padding-left: 1rem;
+                padding-right: 1rem;
+
+                &:hover {
+                    color: @color-1;
+                }
+            }
+
+            .nav-item.active {
+                .nav-link {
+                    color: @color-1;
+                }
+            }
+        }
+    }
+}

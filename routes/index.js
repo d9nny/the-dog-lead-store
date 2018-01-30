@@ -16,14 +16,4 @@ router.get('/blog', function(req, res, next) {
     res.render('blog', { blogArticles: blogArticles });
 });
 
-router.get('/store', function(req, res, next) {
-    res.render('store', { products: products });
-});
-
-router.get('/store/:sku', function(req, res, next) {
-    console.log(req, req.sku);
-    const product = products.slice(product => product.sku === req.sku);
-    res.render('product', { product: product });
-});
-
 module.exports = router;

@@ -1,31 +1,52 @@
 @import './variables.less';
 @import './backgrounds.less';
-@import './navbar.less';
-@import './index.less';
 
-h4, h5, h6, body, input, textarea {
-    font-family: @body-font !important;
+@import './partials/navbar.less';
+@import './partials/product-card.less';
+@import './partials/blog-article-card.less';
+
+@import './pages/index.less';
+@import './pages/store.less';
+
+@import './mixins/scroll.less';
+
+body {
+    .scroll();
 }
 
-h1, h2, h3, h4, h5, h6 {
-    line-height: 1.5 !important;
-    color: @grey-3 !important;
+
+h4, h5, h6, body, input, textarea {
+    font-family: @body-font;
+}
+
+h1, h2 {
+    line-height: 1.2;
+    color: @grey-3 ;
+}
+
+h3, h4, h5, h6 {
+    line-height: 1.5;
+    color: @grey-3 ;
 }
 
 h1, h2, h3 {
-    font-family: @header-font !important;
+    font-family: @header-font;
 }
 
 h1, h2, h3, h4 {
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 1.5rem;
 }
 
 h5, h6 {
-    margin-bottom: .5rem !important;
+    margin-bottom: .5rem;
 }
 
 p {
-    color: @grey-2 !important;
+    color: @grey-2;
+}
+
+p, button, span, input, textarea, small, h4, h5, h6 {
+    letter-spacing: .5px;
 }
 
 a {
@@ -33,20 +54,21 @@ a {
 
     &:hover,
     &:focus {
-        text-decoration: none !important;
+        text-decoration: none;
     }
 }
 
 button.btn {
     &:focus {
-        outline: none !important;
+        outline: none;
         -webkit-box-shadow: none;
         box-shadow: none;
     }
 }
 
 .page-container {
-    padding-top: 96px;
+    padding-top: @nav-height;
+    position: relative;
 
     .section {
         padding-top: 6rem;
@@ -62,6 +84,11 @@ button.btn {
             h2 {
                 font-size: 3rem;
             }
+        }
+
+        .link-container {
+            text-align: center;
+            margin-top: 2rem;
         }
     }
 }
@@ -110,4 +137,26 @@ input.form-control {
     align-items: center;
 }
 
+.justify-content-center {
+    margin: auto;
+}
+
+.card {
+    box-shadow: @box-shadow-2;
+    border-radius: @border-radius;
+    overflow: hidden;
+    border: none;
+
+    .content-container {
+        padding: 1.5rem;
+
+        small {
+            color: @grey-1;
+        }
+    }
+
+    &:hover {
+        box-shadow: @box-shadow-1;
+    }
+}
 

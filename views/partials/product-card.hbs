@@ -1,0 +1,18 @@
+<div class="col-9 col-md-4 product-card-container justify-content-center">
+    <a href="/store/{{this.sku}}">
+        <div class="card bg-white">
+            <div class="content-container">
+                <div class="thumbnail-container vertical-align">
+                    <img src="{{this.imgUrl}}">
+                </div>
+                <h6>{{this.title}}</h6>
+                <small>£{{this.cost}}</small>
+                <div class="colour-icons">
+                    {{#each this.colours}}
+                        <img src="{{this}}">
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </a>
+</div>

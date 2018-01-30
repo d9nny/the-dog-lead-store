@@ -1,0 +1,13 @@
+<div class="col-9 col-md-3 blog-card-container justify-content-center">
+    <a href="/blog/article/{{this.id}}">
+        <div class="card bg-white">
+            <span class="bg-image"
+                  style="background-image: url({{this.imgUrl}})"></span>
+            <div class="content-container">
+                <h6>{{this.title}}</h6>
+                <small>{{formatTime this.id day="numeric" month="long" year="numeric"}}</small>
+                <p>{{this.description}}</p>
+            </div>
+        </div>
+    </a>
+</div>
