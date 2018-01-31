@@ -14,7 +14,6 @@ Basket.prototype.addProduct = function(product) {
         this.products.push(productObj);
     }
     this.qty ++;
-    console.log(this);
 };
 
 Basket.prototype.removeProduct = function(product) {
