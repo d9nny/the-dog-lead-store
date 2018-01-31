@@ -5,13 +5,15 @@
                 <div class="thumbnail-container vertical-align">
                     <img src="{{this.imgUrl}}">
                 </div>
-                <h6>{{this.title}}</h6>
-                <small>£{{this.cost}}</small>
                 <div class="colour-icons">
                     {{#each this.colours}}
-                        <img src="{{this}}">
+                        <img class="colour-option-img" src="{{this}}">
                     {{/each}}
                 </div>
+                <h6>{{this.title}}</h6>
+                <p>£{{this.cost}}</p>
+                <button onclick="dogLeadStore. addToCart(event, '{{{ this.sku }}}')"
+                        class="btn btn-secondary sm">Add to basket</button>
             </div>
         </div>
     </a>

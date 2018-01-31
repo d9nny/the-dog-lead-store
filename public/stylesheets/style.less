@@ -9,6 +9,7 @@
 @import './pages/store.less';
 
 @import './mixins/scroll.less';
+@import './mixins/buttons.less';
 
 body {
     .scroll();
@@ -21,12 +22,12 @@ h4, h5, h6, body, input, textarea {
 
 h1, h2 {
     line-height: 1.2;
-    color: @grey-3 ;
+    color: @heading-color;
 }
 
 h3, h4, h5, h6 {
     line-height: 1.5;
-    color: @grey-3 ;
+    color: @heading-color;
 }
 
 h1, h2, h3 {
@@ -42,7 +43,7 @@ h5, h6 {
 }
 
 p {
-    color: @grey-2;
+    color: @text-color;
 }
 
 p, button, span, input, textarea, small, h4, h5, h6 {
@@ -50,7 +51,7 @@ p, button, span, input, textarea, small, h4, h5, h6 {
 }
 
 a {
-    color: @color-1;
+    color: @brand-primary-1;
 
     &:hover,
     &:focus {

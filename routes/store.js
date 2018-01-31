@@ -8,6 +8,10 @@ router.get('/', function(req, res, next) {
     res.render('store', { products: products });
 });
 
+router.get('/product-list', function(req, res, next) {
+    return res.send(products);
+});
+
 router.get('/:sku', function(req, res, next) {
     const product = products.find(product => product.sku === req.params.sku);
     res.render('product', { product: product });
